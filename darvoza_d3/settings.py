@@ -25,11 +25,7 @@ SECRET_KEY = 'django-insecure-6_2=zxsj$4+@_z_f7l)^-^d6%=zot0_x!ujjgk914)j@38*)82
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    "darvoza_d3.onrender.com",
-    "localhost",
-    "127.0.0.1",
-]
+ALLOWED_HOSTS = ['darvoza-d3.onrender.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
