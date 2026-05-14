@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-6_2=zxsj$4+@_z_f7l)^-^d6%=zot0_x!ujjgk914)j@38*)82
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['darvoza-d3.onrender.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['darvoza-d3.onrender.com', '127.0.0.1', 'localhost', '*']
 
 
 # Application definition
@@ -57,7 +57,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'darvoza_d3.urls'
 CORS_ALLOW_ALL_ORIGINS = True # Frontend ulanishi uchun
 CSRF_TRUSTED_ORIGINS = [
-    "https://darvoza_d3.onrender.com",
+    "https://darvoza-d3.onrender.com",
     "http://localhost:5173",
     "http://127.0.0.1:5173",
 ]
