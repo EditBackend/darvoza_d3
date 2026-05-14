@@ -18,6 +18,9 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf.urls.static import static
 from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
+
+from darvoza_d3 import settings
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
