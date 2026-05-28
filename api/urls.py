@@ -11,6 +11,7 @@ router.register(r'orders', OrderViewSet)
 router.register(r'masters', MasterViewSet)
 router.register(r'categories', CategoryViewSet)
 
+
 urlpatterns = [
     path('', include(router.urls)),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
