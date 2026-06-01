@@ -10,7 +10,6 @@ class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     description = models.TextField()
     image_url = models.URLField()
-
     def __str__(self): return self.name
 
 class Order(models.Model):
@@ -21,6 +20,7 @@ class Order(models.Model):
         ('O\'rnatilmoqda', 'O\'rnatilmoqda'),
         ('Tugatildi', 'Tugatildi'),
     ]
+
     customer_name = models.CharField(max_length=255)
     phone = models.CharField(max_length=20)
     service_type = models.CharField(max_length=100) # Masalan: Darvoza, Panjara

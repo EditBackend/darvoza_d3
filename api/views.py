@@ -14,10 +14,29 @@ class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
 
+
+from rest_framework import viewsets, filters  # filters import qilindi
+from django_filters.rest_framework import DjangoFilterBackend  # requirements.txt'da bor edi
+from .models import Product
+from .serializers import ProductSerializer
+
+
 class ProductViewSet(viewsets.ModelViewSet):
-    queryset = Product.objects.all()
+    queryset = Product.objects.all().order_by('-id')
     serializer_class = ProductSerializer
     parser_classes = (MultiPartParser, FormParser) # Rasmni qabul qilish uchun
+    # Qidiruv va filter tizimini yoqamiz
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
+
+    # 1. Nomi bo'yicha qidirish (search)
+    search_fields = ['name']
+
+    # 2. Narxi va kategoriyasi bo'yicha to'g'ridan-to'g'ri filter qilish
+    filterset_fields = ['price', 'category']
+
+    # Narxini arzon-qimmat qilib tartiblash (Ordering) uchun ham imkoniyat ochamiz
+    ordering_fields = ['price']
+
 
 
 # Mavjud OrderViewSet kodingizni mana bundoq yangilang:
